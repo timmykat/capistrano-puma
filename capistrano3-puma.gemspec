@@ -18,6 +18,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'capistrano', '~> 3.7'
   spec.add_dependency 'capistrano-bundler'
   spec.add_dependency 'puma', '>= 5.1', '< 7.0'
+  spec.add_dependency 'sshkit-sudo'
   spec.post_install_message = %q{
     Version 6.0.0 is a major release. Please see README.md, breaking changes are listed in CHANGELOG.md
   }
