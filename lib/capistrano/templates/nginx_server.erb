@@ -28,7 +28,7 @@ http {
   # Set file upload limits
   client_max_body_size 2M;
 
-  <% server_content = "#{File.read(File.expand_path(File.dir(__FILE__)))}/server.erb" %>%
+  <% server_content = "#{File.read(File.expand_path(File.dirname(__FILE__)))}/server.erb" %>%
   <% server_config = ERB.new(server_content).result(binding) %>%
   <%= ERB.new(sub_template_content).result(binding) %>
 }
