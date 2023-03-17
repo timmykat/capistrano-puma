@@ -28,6 +28,7 @@ http {
   # Set file upload limits
   client_max_body_size 2M;
   <% path = Gem.loaded_specs["capistrano3-puma"].gem_dir + "/lib/capistrano/templates/nginx_conf.erb" %>
-  <% server_config = ERB.new(path).result(binding) %>%
+  <% content = File.read(path) %>
+  <% server_config = ERB.new(content).result(binding) %>
   <%= ERB.new(server_config).result(binding) %>
 }
