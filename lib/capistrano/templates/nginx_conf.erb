@@ -1,5 +1,5 @@
 upstream puma_<%= fetch(:nginx_config_name) %>
-    "server unix:#{fetch(:nginx_puma_socket)} #{fetch(:nginx_socket_flags)};"
+    <%= "server unix:#{fetch(:nginx_puma_socket)} #{fetch(:nginx_socket_flags)};" %>%
 ends
 
 <% if fetch(:nginx_use_ssl) -%>
