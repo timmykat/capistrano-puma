@@ -15,7 +15,7 @@ module Capistrano
     end
 
     def execute_cmd(*args)
-      sudo(*args))
+      sudo(*args)
     end
 
   end
