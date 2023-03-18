@@ -1,5 +1,6 @@
 module Capistrano
   class Puma::Upstart < Capistrano::Plugin
+
     include PumaCommon
 
     def register_hooks
@@ -11,7 +12,7 @@ module Capistrano
     end
 
     def sudo(*command)
-      backend.sudo command.map(&:to_s).join(" ")
+      puts backend.capture(backend.sudo command.map(&:to_s).join(" "))
     end
 
     def execute_cmd(*args)
